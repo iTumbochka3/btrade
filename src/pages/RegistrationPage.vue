@@ -1,3 +1,1 @@
-<template>
-    REGISTRATION
-</template>
+<template>REGISTRATION</template>

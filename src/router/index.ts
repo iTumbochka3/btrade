@@ -1,34 +1,38 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import type { NavigationGuardNext, RouteLocationNormalized, RouteRecordRaw } from 'vue-router'
-import LoginPage from '../pages/LoginPage.vue'
-import PageNotFound from '../pages/PageNotFound.vue'
+import { createRouter, createWebHistory } from "vue-router";
+import type {
+  NavigationGuardNext,
+  RouteLocationNormalized,
+  RouteRecordRaw,
+} from "vue-router";
+import LoginPage from "../pages/LoginPage.vue";
+import PageNotFound from "../pages/PageNotFound.vue";
 
 // function authGuard(to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) {
-  // if (store.getters.isAuthenticated) {
-  //   const userId = store.getters?.getUser?.id
-  //   if (store.getters.getUser.verified === false) {
-  //     const query = { ...from.query, ...to.query }
-  //     next({
-  //       path: `/resident/unverified/${userId}`,
-  //       params: { userId },
-  //       query,
-  //     })
-  //     return
-  //   }
-  //   next()
-  // }
-  // else { 
-    // next({ name: 'Login' }) 
-  // }
+// if (store.getters.isAuthenticated) {
+//   const userId = store.getters?.getUser?.id
+//   if (store.getters.getUser.verified === false) {
+//     const query = { ...from.query, ...to.query }
+//     next({
+//       path: `/resident/unverified/${userId}`,
+//       params: { userId },
+//       query,
+//     })
+//     return
+//   }
+//   next()
+// }
+// else {
+// next({ name: 'Login' })
+// }
 // }
 
 const main: Array<RouteRecordRaw> = [
-  { 
-    path: '/login',
-    name: 'Login',
+  {
+    path: "/login",
+    name: "Login",
     component: LoginPage,
-    meta: { 
-      layout: 'LayoutMain',
+    meta: {
+      layout: "LayoutMain",
     },
   },
   // {
@@ -47,24 +51,24 @@ const main: Array<RouteRecordRaw> = [
   //     layout: 'LayoutMain',
   //   },
   // },
-]
+];
 
 const catchRoutes = [
   {
-    path: '/:catchAll(.*)',
+    path: "/:catchAll(.*)",
     component: PageNotFound,
     meta: {
       guest: true,
-      layout: 'AppLayout',
+      layout: "AppLayout",
     },
   },
-]
+];
 
 const router = createRouter({
   history: createWebHistory(),
   routes: [...main, ...catchRoutes],
-})
+});
 
 // router.beforeEach(loadLayoutMiddleware)
 
-export default router
+export default router;
