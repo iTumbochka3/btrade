@@ -43,14 +43,14 @@ const main: Array<RouteRecordRaw> = [
   //     layout: 'LayoutMain',
   //   },
   // },
-  // {
-  //   path: '/',
-  //   redirect: '/main',
-  //   // beforeEnter: authGuard,
-  //   meta: {
-  //     layout: 'LayoutMain',
-  //   },
-  // },
+  {
+    path: '/',
+    redirect: '/login',
+    // beforeEnter: authGuard,
+    meta: {
+      layout: 'LayoutMain',
+    },
+  },
 ];
 
 const catchRoutes = [
