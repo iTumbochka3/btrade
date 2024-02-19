@@ -15,6 +15,7 @@ module.exports = {
     "prettier/@typescript-eslint",
     "plugin:prettier/recommended",
     "plugin:vue/vue3-recommended",
+    //"plugin:vue/recommended",
     "prettier/vue",
   ],
   plugins: ["prettier", "@typescript-eslint"],
@@ -22,5 +23,5 @@ module.exports = {
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars-experimental": "error",
   },
-  ignorePatterns: ["dist"],
+  "ignorePatterns": ["dist"],
 };
