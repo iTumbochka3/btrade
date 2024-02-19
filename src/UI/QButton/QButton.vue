@@ -1,5 +1,7 @@
 <template>
-  <AButton class="q-button" :disabled="disabled" @click="emits('click')">{{ title }}</AButton>
+  <AButton class="q-button" :disabled="disabled" @click="emits('click')">
+    {{ title }}
+  </AButton>
 </template>
 
 <script setup lang="ts">
