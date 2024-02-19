@@ -36,7 +36,7 @@
       </QInputWrapper>
     </AFormItem>
 
-    <div class="action">
+    <div class="profile-form__action">
       <QButton title="SAVE" @click="save" />
       <QSecondButton title="CHANGE PASSWORD" @click="changePassword" />
     </div>
