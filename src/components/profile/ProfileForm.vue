@@ -1,30 +1,44 @@
 <template>
   <AForm class="profile-form" :model="formData">
-    <AFormItem name="accountId" label="Account ID">
-      <AInput />
+    <AFormItem name="accountId">
+      <QInputWrapper label="Account ID">
+        <AInput class="form-input__input" v-model:value="formData.accountId" />
+      </QInputWrapper>
     </AFormItem>
-    <AFormItem name="userName" label="Username">
-      <AInput />
+    <AFormItem name="userName">
+      <QInputWrapper label="Username">
+        <AInput v-model:value="formData.userName" />
+      </QInputWrapper>
     </AFormItem>
-    <AFormItem name="firstName" label="First Name">
-      <AInput />
+    <AFormItem name="firstName">
+      <QInputWrapper label="First Name">
+        <AInput v-model:value="formData.firstName" />
+      </QInputWrapper>
     </AFormItem>
-    <AFormItem name="lastName" label="Last Name">
-      <AInput />
+    <AFormItem name="lastName">
+      <QInputWrapper label="Last Name">
+        <AInput v-model:value="formData.lastName" />
+      </QInputWrapper>
     </AFormItem>
-    <AFormItem name="email" label="Email address">
-      <AInput />
+    <AFormItem name="email">
+      <QInputWrapper label="Email address">
+        <AInput v-model:value="formData.email" />
+      </QInputWrapper>
     </AFormItem>
-    <AFormItem name="phone" label="Phone Number">
-      <AInput />
+    <AFormItem name="phone">
+      <QInputWrapper label="Phone Number">
+        <AInput v-model:value="formData.phone" />
+      </QInputWrapper>
     </AFormItem>
-    <AFormItem name="referralLink" label="Referral link">
-      <AInput />
+    <AFormItem name="referralLink">
+      <QInputWrapper label="Referral link">
+        <AInput v-model:value="formData.referralLink" />
+      </QInputWrapper>
     </AFormItem>
 
     <div class="action">
       <QButton title="SAVE" @click="save" />
-      <QSecondButton title="CHANGE PASSWORD" />
+      <QSecondButton title="CHANGE PASSWORD" @click="changePassword" />
     </div>
   </AForm>
 </template>
@@ -32,6 +46,7 @@
 <script setup lang="ts">
 import QButton from "../../UI/QButton/QButton.vue";
 import QSecondButton from "../../UI/QSecondButton/QSecondButton.vue";
+import QInputWrapper from "../../UI/QInputWrapper/QInputWrapper.vue";
 import { Form as AForm, FormItem as AFormItem } from "ant-design-vue";
 import { ref } from "vue";
 
@@ -48,12 +63,15 @@ const formData = ref({
 const save = () => {
   console.log("click");
 };
+
+const changePassword = () => {};
 </script>
 
 <style lang="sass">
+@import './ProfileForm'
 .ant-form-item .ant-form-item-label >label
   color: #BAC0C7
-.action
-  display: grid
-  gap: 18px
+.ant-input
+  font-size: 22px
+  border-radius: unset
 </style>
