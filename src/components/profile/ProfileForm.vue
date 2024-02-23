@@ -69,10 +69,4 @@ const changePassword = () => {};
 
 <style lang="sass">
 @import './ProfileForm'
-.ant-form-item .ant-form-item-label >label
-  color: #BAC0C7
-.ant-input
-  font-size: 22px
-  border-radius: unset
-  height: 75px
 </style>

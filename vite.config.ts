@@ -11,4 +11,14 @@ export default defineConfig({
     },
     extensions: [".mjs", ".js", ".ts", ".jsx", ".tsx", ".json", ".sass"],
   },
+  css: {
+    preprocessorOptions: {
+      sass: {
+        additionalData: `
+          @import "@/styles/styles.sass"
+        `,
+      },
+    },
+    devSourcemap: true,
+  },
 });
