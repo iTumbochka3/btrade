@@ -1,11 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
-import type {
-  NavigationGuardNext,
-  RouteLocationNormalized,
-  RouteRecordRaw,
-} from "vue-router";
-import LoginPage from "../pages/LoginPage.vue";
-import PageNotFound from "../pages/PageNotFound.vue";
+import type { RouteRecordRaw } from "vue-router";
+import LoginPage from "@/pages/LoginPage.vue";
+import TradePage from "@/pages/TradePage.vue";
+import PageNotFound from "@/pages/PageNotFound.vue";
 
 // function authGuard(to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) {
 // if (store.getters.isAuthenticated) {
@@ -35,20 +32,20 @@ const main: Array<RouteRecordRaw> = [
       layout: "LayoutMain",
     },
   },
-  // {
-  //   path: '/registration',
-  //   name: 'Registration',
-  //   component: () => import('@/pages/RegistrationPage.vue'),
-  //   meta: {
-  //     layout: 'LayoutMain',
-  //   },
-  // },
   {
-    path: '/',
-    redirect: '/login',
+    path: "/trade",
+    name: "Trade",
+    component: TradePage,
     // beforeEnter: authGuard,
     meta: {
-      layout: 'LayoutMain',
+      layout: "LayoutMain",
+    },
+  },
+  {
+    path: "/",
+    redirect: "/login",
+    meta: {
+      layout: "LayoutMain",
     },
   },
 ];
@@ -58,7 +55,7 @@ const catchRoutes = [
     path: "/:catchAll(.*)",
     component: PageNotFound,
     meta: {
-      guest: true,
+      // guest: true,
       layout: "AppLayout",
     },
   },

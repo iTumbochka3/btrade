@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts">
-import ProfileForm from "../components/profile/ProfileForm.vue";
+import ProfileForm from "@/components/profile/ProfileForm.vue";
 </script>
 
 <style lang="sass" scoped>

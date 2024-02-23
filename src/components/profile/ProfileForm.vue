@@ -44,9 +44,9 @@
 </template>
 
 <script setup lang="ts">
-import QButton from "../../UI/QButton/QButton.vue";
-import QSecondButton from "../../UI/QSecondButton/QSecondButton.vue";
-import QInputWrapper from "../../UI/QInputWrapper/QInputWrapper.vue";
+import QButton from "@/UI/QButton/QButton.vue";
+import QSecondButton from "@/UI/QSecondButton/QSecondButton.vue";
+import QInputWrapper from "@/UI/QInputWrapper/QInputWrapper.vue";
 import { Form as AForm, FormItem as AFormItem } from "ant-design-vue";
 import { ref } from "vue";
 
