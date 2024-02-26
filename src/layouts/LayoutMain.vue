@@ -1,5 +1,5 @@
 <template>
-  <ALayout>
+  <ALayout class="layout-main">
     <ALayoutHeader>
       <QHeader />
     </ALayoutHeader>
@@ -23,7 +23,8 @@ import {
 </script>
 
 <style lang="sass" scoped>
-.container
+.layout-main
   background-color: #181D3B
+.container
   padding: 20px
 </style>
