@@ -1,6 +1,8 @@
 <template>
   <ALayout>
-    <ALayoutHeader></ALayoutHeader>
+    <ALayoutHeader>
+      <QHeader />
+    </ALayoutHeader>
     <ALayoutContent>
       <div class="container">
         <router-view />
@@ -11,6 +13,7 @@
 </template>
 
 <script setup lang="ts">
+import QHeader from "@/components/header/QHeader.vue";
 import {
   Layout as ALayout,
   LayoutHeader as ALayoutHeader,
