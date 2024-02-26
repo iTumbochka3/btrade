@@ -4,20 +4,21 @@
 
 <script setup lang="ts">
 import { h, ref } from "vue";
-import QTradeIcon from "@/assets/icons/QTradeIcon.vue";
+// import QTradeIcon from "@/assets/icons/QTradeIcon.vue";
 import QDepositIcon from "@/assets/icons/QDepositIcon.vue";
-import QWithdrawIcon from "@/assets/icons/QWithdrawIcon.vue";
+// import QWithdrawIcon from "@/assets/icons/QWithdrawIcon.vue";
 import QRatesHistoryIcon from "@/assets/icons/QRatesHistoryIcon.vue";
-import QOperationsHistoryIcon from "@/assets/icons/QOperationsHistoryIcon.vue";
+// import QOperationsHistoryIcon from "@/assets/icons/QOperationsHistoryIcon.vue";
 import QProfileIcon from "@/assets/icons/QProfileIcon.vue";
 import QMenu from "@/UI/QMenu/QMenu.vue";
 import { IMenuItem } from "@/UI/QMenu/interfaces";
 
+// FIXME: fix icon size
 const menuItems = ref<IMenuItem[]>([
   {
     label: "Trade",
     path: "/trade",
-    icon: () => h(QTradeIcon),
+    // icon: () => h(QTradeIcon),
   },
   {
     label: "Profile",
@@ -32,7 +33,7 @@ const menuItems = ref<IMenuItem[]>([
   {
     label: "Withdraw",
     path: "/withdraw",
-    icon: () => h(QWithdrawIcon),
+    // icon: () => h(QWithdrawIcon),
   },
   {
     label: "Rates history",
@@ -42,7 +43,7 @@ const menuItems = ref<IMenuItem[]>([
   {
     label: "Operations history",
     path: "/operations",
-    icon: () => h(QOperationsHistoryIcon),
+    // icon: () => h(QOperationsHistoryIcon),
   },
 ]);
 

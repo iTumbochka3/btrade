@@ -1,6 +1,6 @@
 <template>
-  <div class="q-login-page">
-    <span class="q-login-page__title">PROFILE</span>
+  <div class="q-profile-page">
+    <span class="q-profile-page__title">PROFILE</span>
     <ProfileForm />
   </div>
 </template>
@@ -10,7 +10,7 @@ import ProfileForm from "@/components/profile/ProfileForm.vue";
 </script>
 
 <style lang="sass" scoped>
-.q-login-page
+.q-profile-page
   padding: 40px
   width: 100vh
   display: grid

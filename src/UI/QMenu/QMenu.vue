@@ -1,6 +1,6 @@
 <template>
   <span class="q-menu">
-    <div class="q-menu-item" v-for="item in items" :key="item.label">
+    <div class="q-menu-item" v-for="item in items" :key="item.label" @click="routeTo(item.path)">
       <span class="q-menu-item__icon">
         <component :is="item.icon" />
       </span>
@@ -12,6 +12,7 @@
 <script setup lang="ts">
 import { PropType } from "vue";
 import { IMenuItem } from "./interfaces";
+import { useRouter } from "vue-router";
 
 defineProps({
   items: {
@@ -19,6 +20,10 @@ defineProps({
     default: () => [],
   },
 });
+
+const router = useRouter();
+
+const routeTo = (path: string) => router.push(path);
 </script>
 
 <style lang="sass" scoped>

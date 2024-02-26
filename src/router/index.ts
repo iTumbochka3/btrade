@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import type { RouteRecordRaw } from "vue-router";
-import LoginPage from "@/pages/LoginPage.vue";
+import ProfilePage from "@/pages/ProfilePage.vue";
 import TradePage from "@/pages/TradePage.vue";
 import PageNotFound from "@/pages/PageNotFound.vue";
 
@@ -25,9 +25,9 @@ import PageNotFound from "@/pages/PageNotFound.vue";
 
 const main: Array<RouteRecordRaw> = [
   {
-    path: "/login",
+    path: "/profile",
     name: "Login",
-    component: LoginPage,
+    component: ProfilePage,
     meta: {
       layout: "LayoutMain",
     },
