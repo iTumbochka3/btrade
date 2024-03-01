@@ -46,6 +46,4 @@ const menuItems = ref<IMenuItem[]>([
     // icon: () => h(QOperationsHistoryIcon),
   },
 ]);
-
-console.log(menuItems);
 </script>
