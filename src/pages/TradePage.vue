@@ -1,19 +1,19 @@
 <template>
-  <Bar id="my-chart-id" :options="chartOptions" :data="chartData" />
+  <apexchart width="500" type="candlestick" :options="options" :series="series"></apexchart>
 </template>
 
 <script setup lang="ts">
-import { Bar } from "vue-chartjs";
-import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from "chart.js";
-
-ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale);
-
-const chartData = {
-  labels: ["January", "February", "March"],
-  datasets: [{ data: [40, 20, 12] }],
+const options = {
+  chart: {
+    id: "vuechart-example",
+  },
 };
-
-const chartOptions = {
-  responsive: true,
-};
+const series = [
+  {
+    data: [
+      [1538856000000, [6593.34, 6600, 6582.63, 6600]],
+      [1538856900000, [6595.16, 6604.76, 6590.73, 6593.86]],
+    ],
+  },
+];
 </script>
