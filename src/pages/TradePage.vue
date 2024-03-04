@@ -1,5 +1,5 @@
 <template>
-  <apexchart width="500" type="candlestick" :options="options" :series="series"></apexchart>
+  <apexchart :width="800" type="candlestick" :options="options" :series="series"></apexchart>
 </template>
 
 <script setup lang="ts">
@@ -11,8 +11,13 @@ const options = {
 const series = [
   {
     data: [
-      [1538856000000, [6593.34, 6600, 6582.63, 6600]],
-      [1538856900000, [6595.16, 6604.76, 6590.73, 6593.86]],
+      [1, [10, 20, 7, 18]],
+      [2, [10, 20, 8, 19]],
+      [3, [9, 18, 8, 17]],
+      [4, [8, 15, 7, 14]],
+      [5, [7, 9, 7, 8]],
+      [6, [6, 10, 5, 9]],
+      [7, [8, 12, 6, 10]],
     ],
   },
 ];
