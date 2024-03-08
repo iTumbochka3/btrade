@@ -1,9 +1,9 @@
 <template>
-  <AButton class="q-second-button" :disabled="disabled" @click="emits('click')">{{ title }}</AButton>
+  <!-- <AButton class="q-second-button" :disabled="disabled" @click="emits('click')">{{ title }}</AButton> -->
 </template>
 
 <script setup lang="ts">
-import { Button as AButton } from "ant-design-vue";
+// import { Button as AButton } from "ant-design-vue";
 
 defineProps({
   disabled: {

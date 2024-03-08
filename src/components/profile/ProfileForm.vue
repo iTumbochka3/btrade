@@ -1,5 +1,5 @@
 <template>
-  <AForm class="profile-form" :model="formData">
+  <!-- <AForm class="profile-form" :model="formData">
     <AFormItem name="accountId">
       <QInputWrapper label="Account ID">
         <AInput class="form-input__input" v-model:value="formData.accountId" />
@@ -40,31 +40,32 @@
       <QButton title="SAVE" @click="save" />
       <QSecondButton title="CHANGE PASSWORD" @click="changePassword" />
     </div>
-  </AForm>
+  </AForm> -->
+  <QButton title="SAVE" />
 </template>
 
 <script setup lang="ts">
 import QButton from "@/UI/QButton/QButton.vue";
-import QSecondButton from "@/UI/QSecondButton/QSecondButton.vue";
-import QInputWrapper from "@/UI/QInputWrapper/QInputWrapper.vue";
-import { Form as AForm, FormItem as AFormItem } from "ant-design-vue";
-import { ref } from "vue";
+// import QSecondButton from "@/UI/QSecondButton/QSecondButton.vue";
+// import QInputWrapper from "@/UI/QInputWrapper/QInputWrapper.vue";
+// import { Form as AForm, FormItem as AFormItem } from "ant-design-vue";
+// import { ref } from "vue";
 
-const formData = ref({
-  accountId: "",
-  userName: "",
-  firstName: "",
-  lastName: "",
-  email: "",
-  phone: "",
-  referralLink: "",
-});
+// const formData = ref({
+//   accountId: "",
+//   userName: "",
+//   firstName: "",
+//   lastName: "",
+//   email: "",
+//   phone: "",
+//   referralLink: "",
+// });
 
-const save = () => {
-  console.log("click");
-};
+// const save = () => {
+//   console.log("click");
+// };
 
-const changePassword = () => {};
+// const changePassword = () => {};
 </script>
 
 <style lang="sass">
