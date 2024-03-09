@@ -1,9 +1,14 @@
 <template>
-  <QMenu :items="menuItems" />
+  <span class="q-header">
+    <QLogo />
+    <QMenu :items="menuItems" />
+    <!-- <v-app-bar /> -->
+  </span>
 </template>
 
 <script setup lang="ts">
 import { h, ref } from "vue";
+import QLogo from "@/assets/QLogo.vue";
 // import QTradeIcon from "@/assets/icons/QTradeIcon.vue";
 import QDepositIcon from "@/assets/icons/QDepositIcon.vue";
 // import QWithdrawIcon from "@/assets/icons/QWithdrawIcon.vue";
@@ -13,12 +18,12 @@ import QProfileIcon from "@/assets/icons/QProfileIcon.vue";
 import QMenu from "@/UI/QMenu/QMenu.vue";
 import { IMenuItem } from "@/UI/QMenu/interfaces";
 
-// FIXME: fix icon size
+// FIXME: fix icons (size)
 const menuItems = ref<IMenuItem[]>([
   {
     label: "Trade",
     path: "/trade",
-    // icon: () => h(QTradeIcon),
+    icon: () => h(QDepositIcon),
   },
   {
     label: "Profile",
@@ -33,7 +38,7 @@ const menuItems = ref<IMenuItem[]>([
   {
     label: "Withdraw",
     path: "/withdraw",
-    // icon: () => h(QWithdrawIcon),
+    icon: () => h(QDepositIcon),
   },
   {
     label: "Rates history",
@@ -43,7 +48,11 @@ const menuItems = ref<IMenuItem[]>([
   {
     label: "Operations history",
     path: "/operations",
-    // icon: () => h(QOperationsHistoryIcon),
+    icon: () => h(QDepositIcon),
   },
 ]);
 </script>
+
+<style lang="sass" scoped>
+@import './QHeader'
+</style>
