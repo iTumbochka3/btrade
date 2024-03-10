@@ -5,9 +5,26 @@ import VueApexCharts from "vue3-apexcharts";
 
 // Vuetify
 import "vuetify/styles";
-import { createVuetify } from "vuetify";
+import { ThemeDefinition, createVuetify } from "vuetify";
 
-const vuetify = createVuetify({});
+const myTheme: ThemeDefinition = {
+  variables: {
+    "btn-height": "75px",
+  },
+  colors: {
+    background: "#001529",
+    surface: "#181D3B",
+  },
+};
+
+const vuetify = createVuetify({
+  theme: {
+    defaultTheme: "myTheme",
+    themes: {
+      myTheme,
+    },
+  },
+});
 
 const app = createApp(App);
 app.use(router);

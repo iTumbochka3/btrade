@@ -1,8 +1,23 @@
 <template>
   <span class="q-header">
-    <QLogo />
-    <QMenu :items="menuItems" />
-    <!-- <v-app-bar /> -->
+    <span class="q-header__menu">
+      <QLogo />
+      <QMenu :items="menuItems" />
+    </span>
+
+    <div class="q-header__button">
+      <v-menu>
+        <template v-slot:activator="{ props }">
+          <QNavigationIcon v-bind="props" />
+        </template>
+
+        <v-list>
+          <v-list-item v-for="(item, i) in menuItems" :key="i">
+            <v-list-item-title>{{ item.label }}</v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-menu>
+    </div>
   </span>
 </template>
 
@@ -15,6 +30,7 @@ import QDepositIcon from "@/assets/icons/QDepositIcon.vue";
 import QRatesHistoryIcon from "@/assets/icons/QRatesHistoryIcon.vue";
 // import QOperationsHistoryIcon from "@/assets/icons/QOperationsHistoryIcon.vue";
 import QProfileIcon from "@/assets/icons/QProfileIcon.vue";
+import QNavigationIcon from "@/assets/icons/QNavigationIcon.vue";
 import QMenu from "@/UI/QMenu/QMenu.vue";
 import { IMenuItem } from "@/UI/QMenu/interfaces";
 

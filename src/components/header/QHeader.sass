@@ -1,6 +1,21 @@
 .q-header
+  display: grid
+  grid-template-columns: auto min-content
+  gap: 15px
+  margin: 30px 100px 0px 100px
+
+  &__menu
+    @include card
+    padding: 20px 30px
     display: grid
     grid-template-columns: min-content max-content
     justify-content: space-between
-    padding: 20px 30px
-    background-color: $color-background-2
+  &__button
+    @include card
+    padding: 23px
+    cursor: pointer
+
+@include x-small-layout
+  .q-header
+    margin: unset
+    background-color: unset
