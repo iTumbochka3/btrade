@@ -6,7 +6,8 @@
 </template>
 
 <script setup lang="ts">
-import ProfileForm from "@/components/profile/ProfileForm.vue";
+// FIXME: temp
+import ProfileForm from "@/modules/profile-form/ProfileForm.vue";
 </script>
 
 <style lang="sass" scoped>
