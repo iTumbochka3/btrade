@@ -1,0 +1,12 @@
+.layout-main
+  height: inherit
+  display: grid
+  grid-template-rows: min-content auto min-content
+  gap: 15px
+.container
+  background-color: $color-background-2
+  padding: 20px
+
+@include x-small-layout
+  .container
+    background-color: unset

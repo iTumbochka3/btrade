@@ -1,19 +1,19 @@
 .q-button.v-btn
-    --v-btn-height: 75px
-    font-family: "Raleway"
-    font-size: 16px
-    font-weight: 600
-    background-color: $color-yellow-1
-    border-radius: unset
+  --v-btn-height: 75px
+  font-family: "Raleway"
+  font-size: 16px
+  font-weight: 600
+  background-color: $color-yellow-1
+  border-radius: unset
+  border-color: $color-yellow-1
+  &:hover, &:active, &:focus
+    color: $color-white
     border-color: $color-yellow-1
+  &:disabled
+    color: $color-black
+    background-color: $color-yellow-2
+    border-color: $color-yellow-2
     &:hover, &:active, &:focus
-        color: $color-white
-        border-color: $color-yellow-1
-    &:disabled
-        color: $color-black
-        background-color: $color-yellow-2
-        border-color: $color-yellow-2
-        &:hover, &:active, &:focus
-            color: $color-black
-            border-color: $color-yellow-2
+      color: $color-black
+      border-color: $color-yellow-2
     

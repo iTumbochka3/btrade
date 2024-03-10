@@ -1,24 +1,18 @@
 <template>
-  <!-- <ALayout class="layout-main"> -->
-  <!-- <ALayoutHeader> -->
-  <QHeader />
-  <!-- </ALayoutHeader> -->
-  <!-- <ALayoutContent> -->
-  <div class="container">
-    <router-view />
+  <div class="layout-main">
+    <QHeader />
+    <div class="container">
+      <router-view />
+    </div>
+    <QFooter />
   </div>
-  <!-- </ALayoutContent> -->
-  <!-- <ALayoutFooter></ALayoutFooter> -->
-  <!-- </ALayout> -->
 </template>
 
 <script setup lang="ts">
 import QHeader from "@/components/header/QHeader.vue";
+import QFooter from "@/components/footer/QFooter.vue";
 </script>
 
 <style lang="sass" scoped>
-.layout-main
-  background-color: #181D3B
-.container
-  padding: 20px
+@import './LayoutMain'
 </style>
