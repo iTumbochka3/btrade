@@ -1,0 +1,65 @@
+.q-trade-panel-left-bar
+  display: grid
+  grid-template-columns: [col-one] 40px [col-two] repeat(3, 84px) [col-end]
+  grid-template-rows: [row-one] 34px [row-two] repeat(12, 46px) [row-thirteen] 34px [row-end]
+  gap: 10px 
+  &__upper-buttons
+    @include grid-center
+    @include card
+    grid-column-start: col-two
+    grid-column-end: col-end
+    grid-template-columns: repeat(2, auto)
+    cursor: pointer  
+  &__left-button-1
+    @include grid-center
+    @include card
+    grid-row-start: row-two
+    grid-row-end: 6
+    cursor: pointer
+  &__left-button-2
+    @include grid-center
+    @include card
+    grid-row-start: 6
+    grid-row-end: 10
+    cursor: pointer
+  &__left-button-3
+    @include grid-center
+    @include card
+    grid-row-start: 10
+    grid-row-end: row-thirteen
+    cursor: pointer  
+  &__trade-buttons
+    grid-column-start: col-two
+    grid-column-end: col-end
+    grid-row-start: row-two
+    grid-row-end: row-thirteen
+    display: grid
+    grid-template-columns: repeat(3, 84px)
+    gap: 10px
+    font-size: 12px
+    &-item
+      @include grid-center
+      @include card
+      grid-template-columns: min-content auto
+      gap: 5px
+      cursor: pointer
+      &-index
+        color: $color-primary  
+  &__bottom-button-1
+    @include grid-center
+    @include card
+    grid-column-start: col-two
+    grid-column-end: 3
+    cursor: pointer
+  &__bottom-button-2
+    @include grid-center
+    @include card
+    grid-column-end: 3
+    grid-column-end: 4
+    cursor: pointer
+  &__bottom-button-3
+    @include grid-center
+    @include card
+    grid-column-start: 4
+    grid-column-end: col-end
+    cursor: pointer
