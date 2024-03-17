@@ -11,8 +11,7 @@
   "dependencies": {
     "@canvasjs/vue-charts": "^1.0.4",
     "vue": "^3.4.15",
-    "vue-router": "4",
-    "vue3-apexcharts": "^1.5.2"
+    "vue-router": "4"
   },
   "devDependencies": {
     "@types/node": "^20.11.20",

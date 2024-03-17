@@ -10,7 +10,6 @@ import { onMounted, ref } from "vue";
 const options = ref({
   animationEnabled: true,
   theme: "dark1",
-  exportEnabled: true,
   backgroundColor: "#181D3B",
   axisX: {
     interval: 1,

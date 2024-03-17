@@ -4,12 +4,8 @@
   grid-template-rows: [row-one] 34px [row-two] repeat(12, 46px) [row-thirteen] 34px [row-end]
   gap: 10px 
   &__upper-buttons
-    @include grid-center
-    @include card
     grid-column-start: col-two
     grid-column-end: col-end
-    grid-template-columns: repeat(2, auto)
-    cursor: pointer  
   &__left-button-1
     @include grid-center
     @include card
