@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "apexcharts": "^3.46.0",
+    "@canvasjs/vue-charts": "^1.0.4",
     "vue": "^3.4.15",
     "vue-router": "4",
     "vue3-apexcharts": "^1.5.2"
