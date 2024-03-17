@@ -1,23 +1,13 @@
 <template>
   <div class="q-trade-panel-left-bar">
-    <span class="q-trade-panel-left-bar__upper-buttons">
-      <div class="q-trade-panel-left-bar__trade-buttons-item">
-        <span class="q-trade-panel-left-bar__trade-buttons-item-index"> 0 </span>
-        <span class="q-trade-panel-left-bar__trade-buttons-item-value"> 0.06886 </span>
-      </div>
-    </span>
+    <QCellPosition class="q-trade-panel-left-bar__upper-buttons" :item="{ index: 0, value: 0.06886 }" />
 
     <div class="q-trade-panel-left-bar__left-button-1"><QButtonIcon /></div>
     <div class="q-trade-panel-left-bar__left-button-2"><QButtonIcon /></div>
     <div class="q-trade-panel-left-bar__left-button-3"><QButtonIcon /></div>
 
     <div class="q-trade-panel-left-bar__trade-buttons">
-      <div class="q-trade-panel-left-bar__trade-buttons-item" v-for="item in items" :key="item.index">
-        <span class="q-trade-panel-left-bar__trade-buttons-item-index">
-          {{ item.index }}
-        </span>
-        <span class="q-trade-panel-left-bar__trade-buttons-item-value"> {{ item.value }} </span>
-      </div>
+      <QCellPosition v-for="item in items" :key="item.index" :item="item" />
     </div>
 
     <span class="q-trade-panel-left-bar__bottom-button-1"><QButtonIcon /></span>
@@ -30,6 +20,7 @@
 import { onMounted, ref } from "vue";
 import { ITradePanelItem } from "./interfaces";
 import QButtonIcon from "@/assets/button-icons/QButtonIcon.vue";
+import QCellPosition from "@/components/QCellPosition/QCellPosition.vue";
 
 const items = ref<ITradePanelItem[]>([]);
 

@@ -1,0 +1,21 @@
+.q-cell-info
+  margin: 20px 10px 10px 20px
+  display: grid
+  grid-template-columns: auto min-content
+  grid-template-rows: repeat(2, auto)
+  align-items: center
+  &_disabled
+    cursor: not-allowed
+  &__title
+    color: $color-gray
+  &__eye
+    display: block
+    &_hidden
+      visibility: hidden
+  &__value
+    color: $color-secondary
+    font-weight: 600
+    &_pending
+      color: $color-yellow-1
+    &_error
+      color: $color-red
