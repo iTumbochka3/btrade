@@ -1,24 +1,13 @@
 <template>
   <div class="q-trade-panel-left-bar">
     <QCellPosition class="q-trade-panel-left-bar__upper-buttons" :item="positions?.[0]" @click="selectPosition" />
-
-    <!-- FIXME: multiselectPosition -->
-    <div
-      class="q-trade-panel-left-bar__left-button-1"
-      @click="multiselectPosition(1, ESelectTypeButton.HORIZONTAL, true)"
-    >
+    <div class="q-trade-panel-left-bar__left-button-1" @click="clickButtonSelect(0)">
       <QButtonIcon />
     </div>
-    <div
-      class="q-trade-panel-left-bar__left-button-2"
-      @click="multiselectPosition(2, ESelectTypeButton.HORIZONTAL, true)"
-    >
+    <div class="q-trade-panel-left-bar__left-button-2" @click="clickButtonSelect(1)">
       <QButtonIcon />
     </div>
-    <div
-      class="q-trade-panel-left-bar__left-button-3"
-      @click="multiselectPosition(3, ESelectTypeButton.HORIZONTAL, true)"
-    >
+    <div class="q-trade-panel-left-bar__left-button-3" @click="clickButtonSelect(2)">
       <QButtonIcon />
     </div>
 
@@ -31,22 +20,13 @@
       />
     </div>
 
-    <span
-      class="q-trade-panel-left-bar__bottom-button-1"
-      @click="multiselectPosition(1, ESelectTypeButton.VERTICAL, true)"
-    >
+    <span class="q-trade-panel-left-bar__bottom-button-1" @click="clickButtonSelect(3)">
       <QButtonIcon />
     </span>
-    <span
-      class="q-trade-panel-left-bar__bottom-button-2"
-      @click="multiselectPosition(2, ESelectTypeButton.VERTICAL, true)"
-    >
+    <span class="q-trade-panel-left-bar__bottom-button-2" @click="clickButtonSelect(4)">
       <QButtonIcon />
     </span>
-    <span
-      class="q-trade-panel-left-bar__bottom-button-3"
-      @click="multiselectPosition(3, ESelectTypeButton.VERTICAL, true)"
-    >
+    <span class="q-trade-panel-left-bar__bottom-button-3" @click="clickButtonSelect(5)">
       <QButtonIcon />
     </span>
   </div>
@@ -69,7 +49,13 @@ defineProps({
 
 const { positions, getPositions, selectPosition, multiselectPosition } = useTrade();
 
-const buttonsStatus = reactive({});
+const buttonsStatus = reactive([false, false, false, false, false, false]);
+
+const clickButtonSelect = (index: number) => {
+  buttonsStatus[index] = !buttonsStatus[index];
+  const type = index > 2 ? ESelectTypeButton.VERTICAL : ESelectTypeButton.HORIZONTAL;
+  multiselectPosition(index + 1, type, buttonsStatus[index]);
+};
 
 onMounted(() => getPositions());
 </script>

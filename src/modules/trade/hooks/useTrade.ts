@@ -26,6 +26,7 @@ const useTrade = () => {
   };
 
   const multiselectPosition = (index: number, type: ESelectTypeButton, selected: boolean) => {
+    // TODO: add money
     if (type === ESelectTypeButton.HORIZONTAL) {
       positions.value = positions.value.map((item) => {
         if (index === 1 && item.index >= 1 && item.index <= 12) {
@@ -41,13 +42,13 @@ const useTrade = () => {
       });
     } else if (type === ESelectTypeButton.VERTICAL) {
       positions.value = positions.value.map((item) => {
-        if (index === 1 && item.index % 3 === 1) {
+        if (index === 4 && item.index % 3 === 1) {
           item.active = selected;
         }
-        if (index === 2 && item.index % 3 === 2) {
+        if (index === 5 && item.index % 3 === 2) {
           item.active = selected;
         }
-        if (index === 3 && item.index > 0 && item.index % 3 === 0) {
+        if (index === 6 && item.index > 0 && item.index % 3 === 0) {
           item.active = selected;
         }
         return item;

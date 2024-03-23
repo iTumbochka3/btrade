@@ -1,5 +1,5 @@
 <template>
-  <div class="q-cell-bet" :class="{ 'q-cell-bet_selected': selected }">
+  <div class="q-cell-bet" :class="{ 'q-cell-bet_selected': selected }" @click="emits('select')">
     <span class="q-cell-bet__price">
       {{ price }}
     </span>
@@ -23,6 +23,8 @@ defineProps({
     default: false,
   },
 });
+
+const emits = defineEmits(["select"]);
 </script>
 
 <style lang="sass" scoped>
