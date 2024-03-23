@@ -1,6 +1,7 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
+import { store } from "./store";
 import CanvasJSChart from "@canvasjs/vue-charts";
 
 // Vuetify
@@ -28,6 +29,7 @@ const vuetify = createVuetify({
 
 const app = createApp(App);
 app.use(router);
+app.use(store);
 app.use(CanvasJSChart);
 app.use(vuetify);
 

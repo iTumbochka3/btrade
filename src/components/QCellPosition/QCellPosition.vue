@@ -26,4 +26,3 @@ const emits = defineEmits(["click"]);
 <style lang="sass" scoped>
 @import './QCellPosition'
 </style>
-@/modules/trade/interfaces
