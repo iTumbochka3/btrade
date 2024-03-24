@@ -1,6 +1,10 @@
 <template>
   <div class="q-trade-panel-left-bar">
-    <QCellPosition class="q-trade-panel-left-bar__upper-buttons" :item="positions?.[0]" @click="selectPosition" />
+    <QCellPosition
+      class="q-trade-panel-left-bar__upper-buttons"
+      :item="store.positions?.[0]"
+      @click="store.selectPosition"
+    />
     <div class="q-trade-panel-left-bar__left-button-1" @click="clickButtonSelect(0)">
       <QButtonIcon />
     </div>
@@ -13,10 +17,10 @@
 
     <div class="q-trade-panel-left-bar__trade-buttons">
       <QCellPosition
-        v-for="item in positions.filter(({ index }) => index > 0)"
+        v-for="item in store.positions.filter(({ index }) => index > 0)"
         :key="item.index"
         :item="item"
-        @click="selectPosition"
+        @click="store.selectPosition"
       />
     </div>
 
@@ -33,31 +37,23 @@
 </template>
 
 <script setup lang="ts">
-import { PropType, onMounted, reactive } from "vue";
-import { ITradeCell } from "../interfaces";
+import { onMounted, reactive } from "vue";
 import QButtonIcon from "@/assets/button-icons/QButtonIcon.vue";
 import QCellPosition from "@/components/QCellPosition/QCellPosition.vue";
-import useTrade from "../hooks/useTrade";
 import { ESelectTypeButton } from "../constants";
+import useTradeStore from "../store";
 
-defineProps({
-  positions: {
-    type: Array as PropType<ITradeCell[]>,
-    default: () => [],
-  },
-});
-
-const { positions, getPositions, selectPosition, multiselectPosition } = useTrade();
+const store = useTradeStore();
 
 const buttonsStatus = reactive([false, false, false, false, false, false]);
 
 const clickButtonSelect = (index: number) => {
   buttonsStatus[index] = !buttonsStatus[index];
   const type = index > 2 ? ESelectTypeButton.VERTICAL : ESelectTypeButton.HORIZONTAL;
-  multiselectPosition(index + 1, type, buttonsStatus[index]);
+  store.multiselectPosition(index + 1, type, buttonsStatus[index]);
 };
 
-onMounted(() => getPositions());
+onMounted(() => store.getPositions());
 </script>
 
 <style lang="sass" scoped>

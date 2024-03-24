@@ -13,6 +13,7 @@ import useAuthStore from "@/store/auth";
 
 const authStore = useAuthStore();
 
+// FIXME: test
 onMounted(() => authStore.login("asdfas3273@sadfasd.ri", "admin"));
 </script>
 
