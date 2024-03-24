@@ -2,15 +2,13 @@ import { defineStore } from "pinia";
 
 const useMessageStore = defineStore("message", {
   state: () => ({
-    show: true,
+    show: false,
     message: "",
     timeout: 3000,
   }),
 
   getters: {
-    getShow: (state) => state.show,
     getMessage: (state) => state.message,
-    getTimeout: (state) => state.timeout,
   },
 
   actions: {

@@ -1,9 +1,11 @@
 <template>
-  <v-snackbar :absolute="true" multi-line v-model="getShow" :timeout="getTimeout"> {{ getMessage }} </v-snackbar>
+  <v-snackbar :absolute="true" multi-line v-model="store.show" :timeout="store.timeout">
+    {{ store.getMessage }}
+  </v-snackbar>
 </template>
-<!-- FIXME: NOT WORKING! -->
-<script setup lang="ts">
-import useMessageStore from "@/store/modules/message";
 
-const { getShow, getMessage, getTimeout } = useMessageStore();
+<script setup lang="ts">
+import useMessageStore from "@/store/message";
+
+const store = useMessageStore();
 </script>

@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@canvasjs/vue-charts": "^1.0.4",
+    "axios": "^1.6.8",
+    "js-cookie": "^3.0.5",
     "pinia": "^2.1.7",
     "vue": "^3.4.15",
     "vue-router": "4"

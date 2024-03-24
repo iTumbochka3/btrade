@@ -1,14 +1,14 @@
 <template>
   <div class="q-cell-info">
     <span class="q-cell-info__title">{{ title }}</span>
-    <QButtonEye class="q-cell-info__eye" :class="{ 'q-cell-info__eye_hidden': !eye }" />
+    <QButtonHideIcon class="q-cell-info__eye" :class="{ 'q-cell-info__eye_hidden': !hideShow }" />
     <span class="q-cell-info__value" :class="getClassName()">{{ value }}</span>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ECellInfoStatus } from "./constants";
-import QButtonEye from "@/assets/button-icons/QButtonEye.vue";
+import QButtonHideIcon from "@/assets/button-icons/QButtonHideIcon.vue";
 
 const props = defineProps({
   title: {
@@ -23,7 +23,7 @@ const props = defineProps({
     type: String,
     default: ECellInfoStatus.ACTIVE,
   },
-  eye: {
+  hideShow: {
     type: Boolean,
     default: false,
   },
