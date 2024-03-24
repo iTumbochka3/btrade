@@ -14,28 +14,9 @@ const useTradeStore = defineStore("trade", {
   },
 
   actions: {
-    // async set(type, payload) {
-    //   await Users.setSettings(type, payload)
-    //     .then(() => this.setColumns(type, payload))
-    //     .catch((e) => {
-    //       message.error(e.message);
-    //     });
-    // },
-
     setBalance(value: number) {
       this.balance = value;
     },
-
-    // async get() {
-    // try {
-    // const data = await Users.getSettings(type);
-    // if (data?.result) {
-    //   this.setColumns(type, data.result);
-    // }
-    // } catch (e) {
-    // message.error(e.message);
-    // }
-    // },
   },
 });
 

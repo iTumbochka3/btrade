@@ -1,4 +1,6 @@
-// import { message } from 'ant-design-vue'
+import useMessageStore from "@/store/message";
+
+const store = useMessageStore();
 
 const localCode = (code) => {
   switch (code) {
@@ -18,13 +20,14 @@ const localCode = (code) => {
 const showErrors = (error) => {
   error?.response?.data?.result?.errors.forEach((el) => {
     if (el.message) {
-      // return message.error(el.message);
+      return store.setMessage(el.message);
     } else {
-      // return message.error(localCode(el.code));
+      return store.setMessage(localCode(el.code));
     }
   });
 };
 
+// FIXME: change to current
 export const errorCatcher = (error) => {
   if (error?.response?.data?.result) {
     error?.response?.data?.result?.errors.forEach((el) => {
