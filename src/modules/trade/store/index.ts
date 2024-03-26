@@ -32,7 +32,10 @@ const useTradeStore = defineStore("trade", {
     },
 
     setBet(price: number) {
-      this.bet = price;
+      if (price <= this.balance) {
+        this.bet = price;
+        this.balance -= price;
+      }
     },
 
     getPositions() {
