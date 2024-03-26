@@ -29,7 +29,7 @@ const props = defineProps({
 const emits = defineEmits(["select"]);
 
 const onClick = () => {
-  if (props.disabled) emits("select");
+  if (!props.disabled) emits("select");
 };
 </script>
 
