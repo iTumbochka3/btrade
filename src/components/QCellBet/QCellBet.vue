@@ -1,15 +1,17 @@
 <template>
-  <div class="q-cell-bet" :class="{ 'q-cell-bet_selected': selected }" @click="emits('select')">
+  <div
+    class="q-cell-bet"
+    :class="{ 'q-cell-bet_selected': selected, 'q-cell-bet_disabled': disabled }"
+    @click="onClick"
+  >
     <span class="q-cell-bet__price">
       {{ price }}
     </span>
   </div>
 </template>
 
-<!-- TODO: disabled -->
-
 <script setup lang="ts">
-defineProps({
+const props = defineProps({
   price: {
     type: Number,
     required: true,
@@ -25,6 +27,10 @@ defineProps({
 });
 
 const emits = defineEmits(["select"]);
+
+const onClick = () => {
+  if (props.disabled) emits("select");
+};
 </script>
 
 <style lang="sass" scoped>

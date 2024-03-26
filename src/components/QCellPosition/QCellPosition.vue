@@ -1,7 +1,7 @@
 <template>
   <div class="q-cell-position" :class="{ 'q-cell-position_active': item.active }" @click="emits('click', item.index)">
     <span v-if="item.active" class="q-cell-position__price" :class="{ 'q-cell-position__price_active': item.active }">
-      {{ item.currency }}
+      {{ currencyFormat(item.currency) }}
     </span>
     <span class="q-cell-position__index" :class="{ 'q-cell-position__index_active': item.active }">
       {{ item.index }}
@@ -13,6 +13,7 @@
 <script setup lang="ts">
 import { ITradeCell } from "@/modules/trade/interfaces";
 import { PropType } from "vue";
+import currencyFormat from "@/utils/currencyFormat";
 
 defineProps({
   item: {
@@ -23,9 +24,7 @@ defineProps({
 
 const emits = defineEmits(["click"]);
 
-// FIXME: add currency
-// 1 - fast bet
-// 2 - ручной ввод (???)
+// FIXME: add currency // 2 - ручной ввод (???)
 </script>
 
 <style lang="sass" scoped>

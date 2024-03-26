@@ -12,7 +12,7 @@ interface State {
 
 const useTradeStore = defineStore("trade", {
   state: (): State => ({
-    balance: 0,
+    balance: 500,
     // FIXME: money or positions?
     contract: 0,
     profit: 0,
@@ -60,21 +60,27 @@ const useTradeStore = defineStore("trade", {
       this.positions = this.positions.map((item) => {
         if (index === 1 && item.index >= 1 && item.index <= 12) {
           item.active = selected;
+          item.currency = selected ? this.bet / 12 : 0;
         }
         if (index === 2 && item.index >= 13 && item.index <= 24) {
           item.active = selected;
+          item.currency = selected ? this.bet / 12 : 0;
         }
         if (index === 3 && item.index >= 25 && item.index <= 36) {
           item.active = selected;
+          item.currency = selected ? this.bet / 12 : 0;
         }
         if (index === 4 && item.index % 3 === 1) {
           item.active = selected;
+          item.currency = selected ? this.bet / 12 : 0;
         }
         if (index === 5 && item.index % 3 === 2) {
           item.active = selected;
+          item.currency = selected ? this.bet / 12 : 0;
         }
         if (index === 6 && item.index > 0 && item.index % 3 === 0) {
           item.active = selected;
+          item.currency = selected ? this.bet / 12 : 0;
         }
         return item;
       });

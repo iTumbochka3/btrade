@@ -6,12 +6,13 @@
       <QCellInfo title="Profit" :value="store.getProfit" />
     </div>
     <div class="q-trade-panel-right-bar__bets">
-      <QSecondButton title="CLEAR" />
+      <QSecondButton title="CLEAR" @click="store.clearBets" />
       <QCellBet
         v-for="price in prices"
         :key="price"
         :price="price"
         :selected="price === store.bet"
+        :disabled="store.balance < price"
         @select="onSelect(price)"
       />
     </div>
