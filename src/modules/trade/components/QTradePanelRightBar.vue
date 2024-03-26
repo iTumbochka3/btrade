@@ -6,6 +6,7 @@
       <QCellInfo title="Profit" :value="store.getProfit" />
     </div>
     <div class="q-trade-panel-right-bar__bets">
+      <QSecondButton title="CLEAR" />
       <QCellBet
         v-for="price in prices"
         :key="price"
@@ -20,6 +21,7 @@
 <script setup lang="ts">
 import QCellInfo from "@/components/QCellInfo/QCellInfo.vue";
 import QCellBet from "@/components/QCellBet/QCellBet.vue";
+import QSecondButton from "@/UI/QSecondButton/QSecondButton.vue";
 import useTradeStore from "../store";
 
 const store = useTradeStore();

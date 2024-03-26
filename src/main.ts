@@ -8,9 +8,10 @@ import CanvasJSChart from "@canvasjs/vue-charts";
 import "vuetify/styles";
 import { ThemeDefinition, createVuetify } from "vuetify";
 
+// FIXME: remove?
 const myTheme: ThemeDefinition = {
   variables: {
-    "btn-height": "75px",
+    // "btn-height": "75px",
   },
   colors: {
     background: "#001529",

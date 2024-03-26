@@ -48,20 +48,17 @@ const useTradeStore = defineStore("trade", {
       this.positions = result;
     },
 
-    selectPosition(idx: number) {
+    selectPosition(idx: number, price?: number) {
       const position = this.positions.find(({ index }) => index === idx);
       if (position) {
         position.active = true;
-        position.currency += this.bet;
+        position.currency += price ? price : this.bet;
       }
     },
-
-    setPosition(selected: boolean, price: number) {},
 
     multiSelectPosition(index: number, selected: boolean) {
       this.positions = this.positions.map((item) => {
         if (index === 1 && item.index >= 1 && item.index <= 12) {
-          this.setPosition(selected);
           item.active = selected;
         }
         if (index === 2 && item.index >= 13 && item.index <= 24) {
@@ -80,6 +77,13 @@ const useTradeStore = defineStore("trade", {
           item.active = selected;
         }
         return item;
+      });
+    },
+
+    clearBets() {
+      this.positions.forEach((item) => {
+        item.active = false;
+        item.currency = 0;
       });
     },
   },
