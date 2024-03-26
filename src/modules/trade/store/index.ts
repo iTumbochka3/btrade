@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 import { ITradeCell } from "../interfaces";
-import { ESelectTypeButton } from "../constants";
+import currencyFormat from "@/utils/currencyFormat";
 
 interface State {
   balance: number;
@@ -8,23 +8,22 @@ interface State {
   profit: number;
   bet: number;
   positions: ITradeCell[];
-  activePositions: ITradeCell[];
 }
 
 const useTradeStore = defineStore("trade", {
   state: (): State => ({
     balance: 0,
+    // FIXME: money or positions?
     contract: 0,
     profit: 0,
-    bet: 0,
+    bet: 10,
     positions: [],
-    activePositions: [],
   }),
 
   getters: {
-    getBalance: (state) => state.balance,
-    getContract: (state) => state.contract,
-    getProfit: (state) => state.profit,
+    getBalance: (state) => currencyFormat(state.balance),
+    getContract: (state) => String(state.contract),
+    getProfit: (state) => currencyFormat(state.profit),
   },
 
   actions: {
@@ -43,48 +42,45 @@ const useTradeStore = defineStore("trade", {
         result.push({
           index: i,
           value: (Math.random() * (6 - 4) + 4).toFixed(5),
+          currency: 0,
         });
       }
       this.positions = result;
     },
 
-    selectPosition(idx: number, price?: number) {
+    selectPosition(idx: number) {
       const position = this.positions.find(({ index }) => index === idx);
       if (position) {
-        position.active = !position.active;
-        position.currency = price;
+        position.active = true;
+        position.currency += this.bet;
       }
     },
 
-    multiselectPosition(index: number, type: ESelectTypeButton, selected: boolean) {
-      // TODO: add money
-      if (type === ESelectTypeButton.HORIZONTAL) {
-        this.positions = this.positions.map((item) => {
-          if (index === 1 && item.index >= 1 && item.index <= 12) {
-            item.active = selected;
-          }
-          if (index === 2 && item.index >= 13 && item.index <= 24) {
-            item.active = selected;
-          }
-          if (index === 3 && item.index >= 25 && item.index <= 36) {
-            item.active = selected;
-          }
-          return item;
-        });
-      } else if (type === ESelectTypeButton.VERTICAL) {
-        this.positions = this.positions.map((item) => {
-          if (index === 4 && item.index % 3 === 1) {
-            item.active = selected;
-          }
-          if (index === 5 && item.index % 3 === 2) {
-            item.active = selected;
-          }
-          if (index === 6 && item.index > 0 && item.index % 3 === 0) {
-            item.active = selected;
-          }
-          return item;
-        });
-      }
+    setPosition(selected: boolean, price: number) {},
+
+    multiSelectPosition(index: number, selected: boolean) {
+      this.positions = this.positions.map((item) => {
+        if (index === 1 && item.index >= 1 && item.index <= 12) {
+          this.setPosition(selected);
+          item.active = selected;
+        }
+        if (index === 2 && item.index >= 13 && item.index <= 24) {
+          item.active = selected;
+        }
+        if (index === 3 && item.index >= 25 && item.index <= 36) {
+          item.active = selected;
+        }
+        if (index === 4 && item.index % 3 === 1) {
+          item.active = selected;
+        }
+        if (index === 5 && item.index % 3 === 2) {
+          item.active = selected;
+        }
+        if (index === 6 && item.index > 0 && item.index % 3 === 0) {
+          item.active = selected;
+        }
+        return item;
+      });
     },
   },
 });

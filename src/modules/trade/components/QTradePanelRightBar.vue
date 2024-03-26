@@ -1,9 +1,9 @@
 <template>
   <div class="q-trade-panel-right-bar">
     <div class="q-trade-panel-right-bar__info">
-      <QCellInfo title="Balance" :value="currencyFormat(store.getBalance)" :hide-show="true" />
-      <QCellInfo title="Contract" :value="String(store.getContract)" />
-      <QCellInfo title="Profit" :value="currencyFormat(store.getProfit)" />
+      <QCellInfo title="Balance" :value="store.getBalance" :hide-show="true" />
+      <QCellInfo title="Contract" :value="store.getContract" />
+      <QCellInfo title="Profit" :value="store.getProfit" />
     </div>
     <div class="q-trade-panel-right-bar__bets">
       <QCellBet
@@ -20,20 +20,13 @@
 <script setup lang="ts">
 import QCellInfo from "@/components/QCellInfo/QCellInfo.vue";
 import QCellBet from "@/components/QCellBet/QCellBet.vue";
-import currencyFormat from "@/utils/currencyFormat";
 import useTradeStore from "../store";
 
 const store = useTradeStore();
 
 const prices = [10, 25, 50, 100, 250, 500, 1000];
 
-const onSelect = (price: number) => {
-  if (price === store.bet) {
-    store.setBet(0);
-  } else {
-    store.setBet(price);
-  }
-};
+const onSelect = (price: number) => store.setBet(price);
 </script>
 
 <style lang="sass" scoped>

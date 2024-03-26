@@ -2,12 +2,19 @@
   @include grid-center
   @include card
   grid-template-columns: min-content auto
-  gap: 5px
+  column-gap: 5px
   cursor: pointer
   font-size: 12px
+  justify-items: center
+  line-height: 0px
   &_active
     background-color: $color-secondary
     color: $color-subtext
+  &__price
+    grid-column: span 2
+    color: $color-background-2
+    &_active
+      color: $color-white
   &__index
     color: $color-primary
     &_active

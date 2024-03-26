@@ -40,7 +40,6 @@
 import { onMounted, reactive } from "vue";
 import QButtonIcon from "@/assets/button-icons/QButtonIcon.vue";
 import QCellPosition from "@/components/QCellPosition/QCellPosition.vue";
-import { ESelectTypeButton } from "../constants";
 import useTradeStore from "../store";
 
 const store = useTradeStore();
@@ -49,8 +48,7 @@ const buttonsStatus = reactive([false, false, false, false, false, false]);
 
 const clickButtonSelect = (index: number) => {
   buttonsStatus[index] = !buttonsStatus[index];
-  const type = index > 2 ? ESelectTypeButton.VERTICAL : ESelectTypeButton.HORIZONTAL;
-  store.multiselectPosition(index + 1, type, buttonsStatus[index]);
+  store.multiSelectPosition(index + 1, buttonsStatus[index]);
 };
 
 onMounted(() => store.getPositions());

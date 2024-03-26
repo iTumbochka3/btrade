@@ -1,6 +1,6 @@
 export interface ITradeCell {
   index: number;
   value: number | string;
-  currency?: number;
+  currency: number;
   active?: boolean;
 }
