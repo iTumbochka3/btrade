@@ -1,2 +1,6 @@
 .q-trade-info
-  display: block
+  display: grid
+  &_vertical
+    grid-template-rows: repeat(3, min-content)
+  &_horizontal
+    grid-template-columns: repeat(3, min-content)

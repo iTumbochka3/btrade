@@ -1,5 +1,13 @@
 <template>
-  <div class="q-trade-bets">
+  <div
+    class="q-trade-bets"
+    :class="[
+      {
+        'q-trade-bets_vertical': mode === EModeView.VERTICAL,
+        'q-trade-bets_horizontal': mode === EModeView.HORIZONTAL,
+      },
+    ]"
+  >
     <USecondButton title="CLEAR" @click="store.clearBets" />
     <UCellBet
       v-for="price in prices"
@@ -16,6 +24,14 @@
 import UCellBet from "../ui/UCellBet/UCellBet.vue";
 import USecondButton from "@/UI/USecondButton/USecondButton.vue";
 import useTradeStore from "../store";
+import { EModeView } from "../constants";
+
+defineProps({
+  mode: {
+    type: String,
+    default: EModeView.VERTICAL,
+  },
+});
 
 const store = useTradeStore();
 

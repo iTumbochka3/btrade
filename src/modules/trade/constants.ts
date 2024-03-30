@@ -3,3 +3,8 @@ export const enum ECellInfoStatus {
   PENDING = "pending",
   ERROR = "error",
 }
+
+export const enum EModeView {
+  VERTICAL = "VERTICAL",
+  HORIZONTAL = "HORIZONTAL",
+}

@@ -10,11 +10,11 @@
     ]"
   >
     <Teleport v-if="name === 'md'" to="#header">
-      <QTradeInfo />
+      <QTradeInfo :mode="EModeView.HORIZONTAL" />
       <UTradeTimer />
     </Teleport>
     <Teleport v-else-if="mobile" to="#action">
-      <QTradeInfo />
+      <QTradeInfo :mode="EModeView.HORIZONTAL" />
       <UTradeTimer />
     </Teleport>
 
@@ -23,15 +23,15 @@
     <div class="q-trade-module-control" :class="[{ hidden: !hideChart && mobile }]">
       <QTradePanel />
       <div v-if="name !== 'md'" class="q-trade-module-control-right-bar">
-        <QTradeInfo v-if="!mobile" />
-        <QTradeBets />
+        <QTradeInfo v-if="!mobile" :mode="EModeView.VERTICAL" />
+        <QTradeBets :mode="EModeView.VERTICAL" />
       </div>
     </div>
 
     <Teleport to="#footer">
       <div v-if="mobile">
         <UTradeViewSwitch />
-        <QTradeBets v-if="name !== 'md'" />
+        <QTradeBets v-if="name === 'md'" :mode="EModeView.HORIZONTAL" />
       </div>
     </Teleport>
   </div>
@@ -46,6 +46,7 @@ import UTradeViewSwitch from "./ui/UTradeViewSwitch/UTradeViewSwitch.vue";
 import UTradeTimer from "./ui/UTradeTimer/UTradeTimer.vue";
 import { useDisplay } from "vuetify";
 import { computed } from "vue";
+import { EModeView } from "./constants";
 
 const { mobile, name } = useDisplay();
 
