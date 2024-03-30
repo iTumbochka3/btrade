@@ -1,6 +1,8 @@
 <template>
   <div class="layout-main">
     <QHeader />
+
+    <div id="action" />
     <div class="container" :class="[{ container_mobile: mobile }]">
       <router-view />
     </div>

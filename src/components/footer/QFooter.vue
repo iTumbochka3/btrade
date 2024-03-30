@@ -1,6 +1,6 @@
 <template>
-  <div v-if="route.meta.hideFooter" id="footer" />
-  <div v-else class="q-footer">
+  <div id="footer" />
+  <div v-if="!route.meta.hideFooter" class="q-footer">
     <span class="q-footer__menu">About Us</span>
     <span class="q-footer__socials"></span>
     <span class="q-footer__copyright"> © 2016-2023 BTrade Brokerage Company. All rights reserved. </span>
