@@ -1,38 +1,33 @@
 <template>
-  <span class="q-header">
-    <span class="q-header__menu">
-      <QLogo />
-      <QMenu :items="menuItems" />
+  <span class="q-header" :class="[{ 'q-header_mobile': mobile }]">
+    <span class="q-header__menu" :class="[{ 'q-header__menu_card': name !== 'md' }]">
+      <QMenu :items="menuItems" :short="mobile" />
     </span>
 
-    <div class="q-header__button">
-      <v-menu>
-        <template v-slot:activator="{ props }">
-          <QNavigationIcon v-bind="props" />
-        </template>
+    <!-- FIXME: temp -->
+    <span v-if="mobile" id="header">{{ name }}</span>
 
-        <v-list>
-          <v-list-item v-for="(item, i) in menuItems" :key="i">
-            <v-list-item-title>{{ item.label }}</v-list-item-title>
-          </v-list-item>
-        </v-list>
-      </v-menu>
+    <div class="q-header__setting" :class="[{ 'q-header__setting_mobile': mobile }]">
+      <QSetting />
     </div>
   </span>
 </template>
 
 <script setup lang="ts">
 import { h, ref } from "vue";
-import QLogo from "@/assets/QLogo.vue";
+import { useDisplay } from "vuetify";
+import QMenu from "@/UI/QMenu/QMenu.vue";
+import QSetting from "@/components/QSetting/QSetting.vue";
+import { IMenuItem } from "@/UI/QMenu/interfaces";
+
 // import QTradeIcon from "@/assets/icons/QTradeIcon.vue";
 import QDepositIcon from "@/assets/icons/QDepositIcon.vue";
 // import QWithdrawIcon from "@/assets/icons/QWithdrawIcon.vue";
 import QRatesHistoryIcon from "@/assets/icons/QRatesHistoryIcon.vue";
 // import QOperationsHistoryIcon from "@/assets/icons/QOperationsHistoryIcon.vue";
 import QProfileIcon from "@/assets/icons/QProfileIcon.vue";
-import QNavigationIcon from "@/assets/icons/QNavigationIcon.vue";
-import QMenu from "@/UI/QMenu/QMenu.vue";
-import { IMenuItem } from "@/UI/QMenu/interfaces";
+
+const { mobile, name } = useDisplay();
 
 // FIXME: fix icons (size)
 const menuItems = ref<IMenuItem[]>([

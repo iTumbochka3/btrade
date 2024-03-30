@@ -1,6 +1,7 @@
 .q-menu
-  display: grid
-  grid-template-columns: repeat(6, auto)
+  &-list
+    display: grid
+    grid-template-columns: repeat(6, auto)
   &-item
     padding: 0px 20px
     cursor: pointer
@@ -14,3 +15,13 @@
     &__icon
       height:36px
       width: 36px
+
+  &__short
+    display: block
+    padding: 20px 30px
+
+  &__large
+    display: grid
+    grid-template-columns: min-content max-content
+    justify-content: space-between
+    padding: 20px 30px

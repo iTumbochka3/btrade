@@ -3,19 +3,16 @@
   grid-template-columns: auto min-content
   gap: 15px
   margin: 30px 100px 0px 100px
+  &_mobile
+    margin: unset
+    grid-template-columns: min-content auto min-content
 
   &__menu
-    @include card
-    padding: 20px 30px
-    display: grid
-    grid-template-columns: min-content max-content
-    justify-content: space-between
-  &__button
-    @include card
-    padding: 23px
-    cursor: pointer
+    &_card
+      @include card
 
-@include x-small-layout
-  .q-header
-    margin: unset
-    background-color: unset
+  &__setting
+    @include card
+    &_mobile
+      background-color: unset
+      border: unset
