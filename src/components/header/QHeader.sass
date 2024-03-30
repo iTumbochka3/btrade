@@ -2,17 +2,17 @@
   display: grid
   grid-template-columns: auto min-content
   gap: 15px
-  margin: 30px 100px 0px 100px
-  &_mobile
-    margin: unset
+  &_small
+    @include card
+  &_middle
     grid-template-columns: min-content auto min-content
+  &_large
+    margin: 30px 100px 0px 100px
 
   &__menu
     &_card
       @include card
 
   &__setting
-    @include card
-    &_mobile
-      background-color: unset
-      border: unset
+    &_card
+      @include card

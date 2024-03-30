@@ -1,13 +1,21 @@
 <template>
-  <span class="q-header" :class="[{ 'q-header_mobile': mobile }]">
+  <span
+    class="q-header"
+    :class="[
+      {
+        'q-header_small': mobile && name !== 'md',
+        'q-header_middle': name === 'md',
+        'q-header_large': !mobile,
+      },
+    ]"
+  >
     <span class="q-header__menu" :class="[{ 'q-header__menu_card': name !== 'md' }]">
       <QMenu :items="menuItems" :short="mobile" />
     </span>
 
-    <!-- FIXME: temp -->
-    <span v-if="mobile" id="header">{{ name }}</span>
+    <span v-if="name === 'md'" id="header"></span>
 
-    <div class="q-header__setting" :class="[{ 'q-header__setting_mobile': mobile }]">
+    <div class="q-header__setting" :class="[{ 'q-header__setting_card': !mobile }]">
       <QSetting />
     </div>
   </span>
