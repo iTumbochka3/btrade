@@ -39,7 +39,7 @@
 <script setup lang="ts">
 import { onMounted, reactive } from "vue";
 import QButtonIcon from "@/assets/button-icons/QButtonIcon.vue";
-import UCellPosition from "@/components/UCellPosition/UCellPosition.vue";
+import UCellPosition from "../ui/UCellPosition/UCellPosition.vue";
 import useTradeStore from "../store";
 
 const store = useTradeStore();

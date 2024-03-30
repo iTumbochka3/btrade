@@ -6,7 +6,7 @@
       <UCellInfo title="Profit" :value="store.getProfit" />
     </div>
     <div class="q-trade-panel-right-bar__bets">
-      <QSecondButton title="CLEAR" @click="store.clearBets" />
+      <USecondButton title="CLEAR" @click="store.clearBets" />
       <UCellBet
         v-for="price in prices"
         :key="price"
@@ -20,9 +20,9 @@
 </template>
 
 <script setup lang="ts">
-import UCellInfo from "@/components/UCellInfo/UCellInfo.vue";
-import UCellBet from "@/components/UCellBet/UCellBet.vue";
-import QSecondButton from "@/UI/QSecondButton/QSecondButton.vue";
+import UCellInfo from "../ui/UCellInfo/UCellInfo.vue";
+import UCellBet from "../ui/UCellBet/UCellBet.vue";
+import USecondButton from "@/UI/USecondButton/USecondButton.vue";
 import useTradeStore from "../store";
 
 const store = useTradeStore();

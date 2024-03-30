@@ -38,14 +38,14 @@
 
     <div class="profile-form__action">
       <UButton title="SAVE" @click="save" />
-      <QSecondButton title="CHANGE PASSWORD" @click="changePassword" />
+      <USecondButton title="CHANGE PASSWORD" @click="changePassword" />
     </div>
   </AForm>
 </template>
 
 <script setup lang="ts">
 import UButton from "@/UI/UButton/UButton.vue";
-import QSecondButton from "@/UI/QSecondButton/QSecondButton.vue";
+import USecondButton from "@/UI/USecondButton/USecondButton.vue";
 import UInputWrapper from "@/UI/UInputWrapper/UInputWrapper.vue";
 import { ref } from "vue";
 
