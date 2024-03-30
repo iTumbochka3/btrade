@@ -11,9 +11,9 @@
 
     <QTradeChart />
 
-    <div class="q-trade-panel">
+    <div class="q-trade-module-control">
       <QTradePanel />
-      <div v-if="name !== 'md'" class="q-trade-panel-right-bar">
+      <div v-if="name !== 'md'" class="q-trade-module-control-right-bar">
         <QTradeInfo v-if="!mobile" />
         <QTradeBets />
       </div>
