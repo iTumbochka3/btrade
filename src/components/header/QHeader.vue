@@ -42,7 +42,7 @@
 <script setup lang="ts">
 import { h, ref } from "vue";
 import { useDisplay } from "vuetify";
-import QMenu from "@/UI/QMenu/QMenu.vue";
+import QMenu from "./QMenu/QMenu.vue";
 import QSetting from "@/components/QSetting/QSetting.vue";
 import { IMenuItem } from "@/UI/QMenu/interfaces";
 

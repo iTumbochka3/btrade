@@ -1,16 +1,20 @@
 .q-header
   display: grid
-  grid-template-columns: auto min-content
   gap: 15px
+  align-items: center
+  justify-content: space-between
   &_small
+    grid-template-columns: repeat(2, min-content)
     @include card
   &_middle
     grid-template-columns: min-content auto min-content
   &_large
+    grid-template-columns: auto min-content
     margin: 30px 100px 0px 100px
 
   &__menu
     &_large
+      height: 100%
       @include card
 
   &__setting

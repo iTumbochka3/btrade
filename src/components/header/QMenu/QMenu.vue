@@ -1,10 +1,12 @@
 <template>
   <span class="q-menu">
     <span v-if="short" class="q-menu__short">
-      <span class="q-menu-item__icon">
-        <component :is="items.find((item) => item.label === route.name)?.icon" />
-      </span>
-      {{ route.name }}
+      <div class="q-menu-item">
+        <span class="q-menu-item__icon">
+          <component :is="items.find((item) => item.label === route.name)?.icon" />
+        </span>
+        {{ route.name }}
+      </div>
 
       <v-menu activator="parent">
         <v-list>
