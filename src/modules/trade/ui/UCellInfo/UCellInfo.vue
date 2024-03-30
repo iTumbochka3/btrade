@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-import { ECellInfoStatus } from "./constants";
+import { ECellInfoStatus } from "../../constants";
 import QButtonHideIcon from "@/assets/button-icons/QButtonHideIcon.vue";
 
 const props = defineProps({
@@ -46,3 +46,4 @@ const getClassName = () => {
 <style lang="sass" scoped>
 @import './UCellInfo'
 </style>
+../../constants
