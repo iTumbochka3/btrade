@@ -8,8 +8,15 @@
 
       <v-menu activator="parent">
         <v-list>
-          <v-list-item v-for="(item, index) in items" :key="index" :value="index">
-            <v-list-item-title>{{ item.label }}</v-list-item-title>
+          <v-list-item v-for="(item, index) in items" :key="index" :value="index" @click="routeTo(item.path)">
+            <template #title>
+              <div class="q-menu-item">
+                <span class="q-menu-item__icon">
+                  <component :is="item.icon" />
+                </span>
+                {{ item.label }}
+              </div>
+            </template>
           </v-list-item>
         </v-list>
       </v-menu>
