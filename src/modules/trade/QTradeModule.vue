@@ -30,7 +30,7 @@
 
     <Teleport to="#footer">
       <div v-if="mobile">
-        <UTradeViewSwitch />
+        <UTradeViewSwitch :hide-chart="hideChart" @toggle="toggleView" />
         <QTradeBets v-if="name === 'md'" :mode="EModeView.HORIZONTAL" />
       </div>
     </Teleport>
@@ -45,14 +45,14 @@ import QTradePanel from "./components/QTradePanel.vue";
 import UTradeViewSwitch from "./ui/UTradeViewSwitch/UTradeViewSwitch.vue";
 import UTradeTimer from "./ui/UTradeTimer/UTradeTimer.vue";
 import { useDisplay } from "vuetify";
-import { computed } from "vue";
+import { ref } from "vue";
 import { EModeView } from "./constants";
 
 const { mobile, name } = useDisplay();
 
-const hideChart = computed(() => {
-  return !mobile.value;
-});
+const hideChart = ref(true);
+
+const toggleView = () => (hideChart.value = !hideChart.value);
 </script>
 
 <style lang="sass" scoped>
