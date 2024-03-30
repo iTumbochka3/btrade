@@ -1,11 +1,18 @@
 <template>
-  <div class="q-trade-chart">
+  <div v-if="!hidden" class="q-trade-chart">
     <CanvasJSChart :options="options" :style="styleOptions" />
   </div>
 </template>
 
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
+
+defineProps({
+  hidden: {
+    type: Boolean,
+    default: false,
+  },
+});
 
 const options = ref({
   animationEnabled: true,

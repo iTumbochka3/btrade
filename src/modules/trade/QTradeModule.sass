@@ -1,7 +1,13 @@
 .q-trade-module
   display: grid
-  grid-template-columns: auto min-content
   gap: 15px
+
+  &_small
+    grid-template-columns: auto
+  &_middle
+    grid-template-columns: auto
+  &_large
+    grid-template-columns: auto min-content
 
   &-control
     display: grid
@@ -11,3 +17,6 @@
       display: grid
       grid-template-rows: repeat(2, auto)
       gap: 45px
+
+  .hidden
+    display: none
