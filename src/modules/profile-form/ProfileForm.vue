@@ -1,52 +1,52 @@
 <template>
   <AForm class="profile-form" :model="formData">
     <!-- <AFormItem name="accountId"> -->
-    <QInputWrapper label="Account ID">
+    <UInputWrapper label="Account ID">
       <AInput class="form-input__input" v-model:value="formData.accountId" />
-    </QInputWrapper>
+    </UInputWrapper>
     <!-- </AFormItem> -->
     <!-- <AFormItem name="userName"> -->
-    <QInputWrapper label="Username">
+    <UInputWrapper label="Username">
       <AInput v-model:value="formData.userName" />
-    </QInputWrapper>
+    </UInputWrapper>
     <!-- </AFormItem> -->
     <!-- <AFormItem name="firstName"> -->
-    <QInputWrapper label="First Name">
+    <UInputWrapper label="First Name">
       <AInput v-model:value="formData.firstName" />
-    </QInputWrapper>
+    </UInputWrapper>
     <!-- </AFormItem> -->
     <!-- <AFormItem name="lastName"> -->
-    <QInputWrapper label="Last Name">
+    <UInputWrapper label="Last Name">
       <AInput v-model:value="formData.lastName" />
-    </QInputWrapper>
+    </UInputWrapper>
     <!-- </AFormItem> -->
     <!-- <AFormItem name="email"> -->
-    <QInputWrapper label="Email address">
+    <UInputWrapper label="Email address">
       <AInput v-model:value="formData.email" />
-    </QInputWrapper>
+    </UInputWrapper>
     <!-- </AFormItem> -->
     <!-- <AFormItem name="phone"> -->
-    <QInputWrapper label="Phone Number">
+    <UInputWrapper label="Phone Number">
       <AInput v-model:value="formData.phone" />
-    </QInputWrapper>
+    </UInputWrapper>
     <!-- </AFormItem> -->
     <!-- <AFormItem name="referralLink"> -->
-    <QInputWrapper label="Referral link">
+    <UInputWrapper label="Referral link">
       <AInput v-model:value="formData.referralLink" />
-    </QInputWrapper>
+    </UInputWrapper>
     <!-- </AFormItem> -->
 
     <div class="profile-form__action">
-      <QButton title="SAVE" @click="save" />
+      <UButton title="SAVE" @click="save" />
       <QSecondButton title="CHANGE PASSWORD" @click="changePassword" />
     </div>
   </AForm>
 </template>
 
 <script setup lang="ts">
-import QButton from "@/UI/QButton/QButton.vue";
+import UButton from "@/UI/UButton/UButton.vue";
 import QSecondButton from "@/UI/QSecondButton/QSecondButton.vue";
-import QInputWrapper from "@/UI/QInputWrapper/QInputWrapper.vue";
+import UInputWrapper from "@/UI/UInputWrapper/UInputWrapper.vue";
 import { ref } from "vue";
 
 const formData = ref({

@@ -1,13 +1,13 @@
 <template>
   <div class="q-trade-panel-right-bar">
     <div class="q-trade-panel-right-bar__info">
-      <QCellInfo title="Balance" :value="store.getBalance" :hide-show="true" />
-      <QCellInfo title="Contract" :value="store.getContract" />
-      <QCellInfo title="Profit" :value="store.getProfit" />
+      <UCellInfo title="Balance" :value="store.getBalance" :hide-show="true" />
+      <UCellInfo title="Contract" :value="store.getContract" />
+      <UCellInfo title="Profit" :value="store.getProfit" />
     </div>
     <div class="q-trade-panel-right-bar__bets">
       <QSecondButton title="CLEAR" @click="store.clearBets" />
-      <QCellBet
+      <UCellBet
         v-for="price in prices"
         :key="price"
         :price="price"
@@ -20,8 +20,8 @@
 </template>
 
 <script setup lang="ts">
-import QCellInfo from "@/components/QCellInfo/QCellInfo.vue";
-import QCellBet from "@/components/QCellBet/QCellBet.vue";
+import UCellInfo from "@/components/UCellInfo/UCellInfo.vue";
+import UCellBet from "@/components/UCellBet/UCellBet.vue";
 import QSecondButton from "@/UI/QSecondButton/QSecondButton.vue";
 import useTradeStore from "../store";
 

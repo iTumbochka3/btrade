@@ -26,7 +26,7 @@ import PageNotFound from "@/pages/PageNotFound.vue";
 const main: Array<RouteRecordRaw> = [
   {
     path: "/profile",
-    name: "Login",
+    name: "Profile",
     component: ProfilePage,
     meta: {
       layout: "LayoutMain",

@@ -1,6 +1,6 @@
 <template>
-  <div class="q-input-wrapper">
-    <span class="q-input-wrapper__label" name="label">{{ label }}</span>
+  <div class="u-input-wrapper">
+    <span class="u-input-wrapper__label" name="label">{{ label }}</span>
     <slot />
   </div>
 </template>
@@ -15,5 +15,5 @@ defineProps({
 </script>
 
 <style lang="sass">
-@import './QInputWrapper'
+@import './UInputWrapper'
 </style>

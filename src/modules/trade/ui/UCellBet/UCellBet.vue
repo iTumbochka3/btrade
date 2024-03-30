@@ -1,10 +1,10 @@
 <template>
   <div
-    class="q-cell-bet"
-    :class="{ 'q-cell-bet_selected': selected, 'q-cell-bet_disabled': disabled }"
+    class="u-cell-bet"
+    :class="{ 'u-cell-bet_selected': selected, 'u-cell-bet_disabled': disabled }"
     @click="onClick"
   >
-    <span class="q-cell-bet__price">
+    <span class="u-cell-bet__price">
       {{ price }}
     </span>
   </div>
@@ -34,5 +34,5 @@ const onClick = () => {
 </script>
 
 <style lang="sass" scoped>
-@import './QCellBet'
+@import './UCellBet'
 </style>

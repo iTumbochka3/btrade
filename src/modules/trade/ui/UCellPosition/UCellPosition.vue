@@ -1,12 +1,12 @@
 <template>
-  <div class="q-cell-position" :class="{ 'q-cell-position_active': item.active }" @click="emits('click', item.index)">
-    <span v-if="item.active" class="q-cell-position__price" :class="{ 'q-cell-position__price_active': item.active }">
+  <div class="u-cell-position" :class="{ 'u-cell-position_active': item.active }" @click="emits('click', item.index)">
+    <span v-if="item.active" class="u-cell-position__price" :class="{ 'u-cell-position__price_active': item.active }">
       {{ currencyFormat(item.currency) }}
     </span>
-    <span class="q-cell-position__index" :class="{ 'q-cell-position__index_active': item.active }">
+    <span class="u-cell-position__index" :class="{ 'u-cell-position__index_active': item.active }">
       {{ item.index }}
     </span>
-    <span class="q-cell-position__value"> {{ item.value }} </span>
+    <span class="u-cell-position__value"> {{ item.value }} </span>
   </div>
 </template>
 
@@ -28,5 +28,5 @@ const emits = defineEmits(["click"]);
 </script>
 
 <style lang="sass" scoped>
-@import './QCellPosition'
+@import './UCellPosition'
 </style>

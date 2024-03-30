@@ -1,6 +1,6 @@
 <template>
   <div class="q-trade-panel-left-bar">
-    <QCellPosition
+    <UCellPosition
       class="q-trade-panel-left-bar__upper-buttons"
       :item="store.positions?.[0]"
       @click="store.selectPosition"
@@ -16,7 +16,7 @@
     </div>
 
     <div class="q-trade-panel-left-bar__trade-buttons">
-      <QCellPosition
+      <UCellPosition
         v-for="item in store.positions.filter(({ index }) => index > 0)"
         :key="item.index"
         :item="item"
@@ -39,7 +39,7 @@
 <script setup lang="ts">
 import { onMounted, reactive } from "vue";
 import QButtonIcon from "@/assets/button-icons/QButtonIcon.vue";
-import QCellPosition from "@/components/QCellPosition/QCellPosition.vue";
+import UCellPosition from "@/components/UCellPosition/UCellPosition.vue";
 import useTradeStore from "../store";
 
 const store = useTradeStore();
@@ -57,4 +57,3 @@ onMounted(() => store.getPositions());
 <style lang="sass" scoped>
 @import './QTradePanelLeftBar'
 </style>
-../interfaces

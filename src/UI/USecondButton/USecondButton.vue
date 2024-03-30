@@ -1,5 +1,5 @@
 <template>
-  <v-btn class="q-button" :disabled="disabled" @click="emits('click')">{{ title }}</v-btn>
+  <v-btn class="u-second-button" :disabled="disabled" @click="emits('click')">{{ title }}</v-btn>
 </template>
 
 <script setup lang="ts">
@@ -18,5 +18,5 @@ const emits = defineEmits(["click"]);
 </script>
 
 <style lang="sass">
-@import './QButton'
+@import './USecondButton'
 </style>

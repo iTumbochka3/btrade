@@ -1,8 +1,8 @@
 <template>
-  <div class="q-cell-info">
-    <span class="q-cell-info__title">{{ title }}</span>
-    <QButtonHideIcon class="q-cell-info__eye" :class="{ 'q-cell-info__eye_hidden': !hideShow }" />
-    <span class="q-cell-info__value" :class="getClassName()">{{ value }}</span>
+  <div class="u-cell-info">
+    <span class="u-cell-info__title">{{ title }}</span>
+    <QButtonHideIcon class="u-cell-info__eye" :class="{ 'u-cell-info__eye_hidden': !hideShow }" />
+    <span class="u-cell-info__value" :class="getClassName()">{{ value }}</span>
   </div>
 </template>
 
@@ -34,15 +34,15 @@ const props = defineProps({
 const getClassName = () => {
   switch (props.status) {
     case ECellInfoStatus.ACTIVE:
-      return "q-cell-info__value_active";
+      return "u-cell-info__value_active";
     case ECellInfoStatus.PENDING:
-      return "q-cell-info__value_pending";
+      return "u-cell-info__value_pending";
     case ECellInfoStatus.ERROR:
-      return "q-cell-info__value_error";
+      return "u-cell-info__value_error";
   }
 };
 </script>
 
 <style lang="sass" scoped>
-@import './QCellInfo'
+@import './UCellInfo'
 </style>

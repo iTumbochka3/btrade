@@ -43,7 +43,7 @@
 import { h, ref } from "vue";
 import { useDisplay } from "vuetify";
 import QMenu from "./QMenu/QMenu.vue";
-import QSetting from "@/components/QSetting/QSetting.vue";
+import QSetting from "./QSetting/QSetting.vue";
 import { IMenuItem } from "@/UI/QMenu/interfaces";
 
 // import QTradeIcon from "@/assets/icons/QTradeIcon.vue";
