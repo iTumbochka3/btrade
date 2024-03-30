@@ -39,6 +39,7 @@ const main: Array<RouteRecordRaw> = [
     // beforeEnter: authGuard,
     meta: {
       layout: "LayoutMain",
+      hideFooter: true,
     },
   },
   {
