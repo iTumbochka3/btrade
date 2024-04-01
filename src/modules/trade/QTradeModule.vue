@@ -21,7 +21,7 @@
     <QTradeChart :hidden="hideChart && mobile" />
 
     <div class="q-trade-module-control" :class="[{ hidden: !hideChart && mobile }]">
-      <QTradePanel />
+      <QTradePanel :mode="name === 'md' ? EModeView.HORIZONTAL : EModeView.VERTICAL" />
       <div v-if="name !== 'md'" class="q-trade-module-control-right-bar">
         <QTradeInfo v-if="!mobile" :mode="EModeView.VERTICAL" />
         <QTradeBets :mode="EModeView.VERTICAL" />
