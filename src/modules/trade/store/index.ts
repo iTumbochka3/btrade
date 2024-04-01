@@ -44,6 +44,7 @@ const useTradeStore = defineStore("trade", {
 
       return [...row_1, ...row_2, ...row_3];
     },
+    getCurrentBetMoney: (state) => state.positions?.reduce((acc, value) => acc + value.currency, 0)?.toFixed(5),
   },
 
   actions: {
@@ -76,6 +77,7 @@ const useTradeStore = defineStore("trade", {
       if (position) {
         position.active = true;
         position.currency += price ? price : this.bet;
+        this.setBalance(this.balance - this.bet);
       }
     },
 

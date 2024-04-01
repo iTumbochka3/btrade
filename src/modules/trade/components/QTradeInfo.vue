@@ -9,6 +9,8 @@
     ]"
   >
     <UCellInfo title="Balance" :value="store.getBalance" :hide-show="true" />
+    <!-- FIXME: temp -->
+    <!-- <UCellInfo title="Bet" :value="String(store.getCurrentBetMoney)" :hide-show="true" /> -->
     <UCellInfo title="Contract" :value="store.getContract" />
     <UCellInfo title="Profit" :value="store.getProfit" />
   </div>
