@@ -1,17 +1,7 @@
 <template>
   <div class="q-trade-panel">
-    <UCellPosition class="q-trade-panel__upper-buttons" :item="store.positions?.[0]" @click="store.selectPosition" />
-    <div class="q-trade-panel__left-button-1" @click="clickButtonSelect(0)">
-      <QButtonIcon />
-    </div>
-    <div class="q-trade-panel__left-button-2" @click="clickButtonSelect(1)">
-      <QButtonIcon />
-    </div>
-    <div class="q-trade-panel__left-button-3" @click="clickButtonSelect(2)">
-      <QButtonIcon />
-    </div>
-
-    <div class="q-trade-panel__trade-buttons">
+    <UCellPosition class="q-trade-panel__first-position" :item="store.positions?.[0]" @click="store.selectPosition" />
+    <div class="q-trade-panel__positions">
       <UCellPosition
         v-for="item in store.positions.filter(({ index }) => index > 0)"
         :key="item.index"
@@ -20,22 +10,14 @@
       />
     </div>
 
-    <span class="q-trade-panel__bottom-button-1" @click="clickButtonSelect(3)">
-      <QButtonIcon />
-    </span>
-    <span class="q-trade-panel__bottom-button-2" @click="clickButtonSelect(4)">
-      <QButtonIcon />
-    </span>
-    <span class="q-trade-panel__bottom-button-3" @click="clickButtonSelect(5)">
-      <QButtonIcon />
-    </span>
+    <UTradeButton v-for="num in 6" :class="`q-trade-panel-button-${num}`" @click="clickButtonSelect(num)" />
   </div>
 </template>
 
 <script setup lang="ts">
 import { onMounted, reactive } from "vue";
-import QButtonIcon from "@/assets/button-icons/QButtonIcon.vue";
 import UCellPosition from "../ui/UCellPosition/UCellPosition.vue";
+import UTradeButton from "../ui/UTradeButton/UTradeButton.vue";
 import useTradeStore from "../store";
 import { EModeView } from "../constants";
 
@@ -51,8 +33,8 @@ const store = useTradeStore();
 const buttonsStatus = reactive([false, false, false, false, false, false]);
 
 const clickButtonSelect = (index: number) => {
-  buttonsStatus[index] = !buttonsStatus[index];
-  store.multiSelectPosition(index + 1, buttonsStatus[index]);
+  buttonsStatus[index - 1] = !buttonsStatus[index - 1];
+  store.multiSelectPosition(index, buttonsStatus[index - 1]);
 };
 
 onMounted(() => store.getPositions());
