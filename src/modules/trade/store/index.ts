@@ -13,8 +13,9 @@ interface State {
 const useTradeStore = defineStore("trade", {
   state: (): State => ({
     balance: 500,
-    // FIXME: money or positions?
+    // getCurrentBetMoney
     contract: 0,
+    // ---------------
     profit: 0,
     bet: 10,
     positions: [],
