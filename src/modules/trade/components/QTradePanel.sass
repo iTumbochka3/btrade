@@ -12,26 +12,52 @@
   &-button-1
     grid-row-start: row-two
     grid-row-end: 6
+    &_horizontal
+      grid-column-start: col-two
+      grid-column-end: 6
+      grid-row-start: row-four
   &-button-2
     grid-row-start: 6
     grid-row-end: 10
+    &_horizontal
+      grid-column-start: 6
+      grid-column-end: 10
+      grid-row-start: row-four
   &-button-3
     grid-row-start: 10
     grid-row-end: row-thirteen
+    &_horizontal
+      grid-column-start: 10
+      grid-column-end: col-thirteen
+      grid-row-start: row-four
+
   &-button-4
     grid-column-start: col-two
     grid-column-end: 3
+    &_horizontal
+      grid-column-start: col-thirteen
+      grid-column-end: col-end
   &-button-5
-    grid-column-end: 3
+    grid-column-start: 3
     grid-column-end: 4
+    &_horizontal
+      grid-column-start: col-thirteen
+      grid-column-end: col-end
+      grid-row-start: 2
   &-button-6
     grid-column-start: 4
     grid-column-end: col-end
+    &_horizontal
+      grid-column-start: col-thirteen
+      grid-column-end: col-end
+      grid-row-start: 3
 
   &__first-position
     grid-column-start: col-two
     grid-column-end: col-end  
     &_horizontal
+      grid-column-start: col-one
+      grid-column-end: col-two
       grid-row-start: row-one
       grid-row-end: row-four
 
