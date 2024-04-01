@@ -6,12 +6,17 @@
       :item="store.positions?.[0]"
       @click="store.selectPosition"
     />
-    <div
-      class="q-trade-panel__positions"
-      :class="{ 'q-trade-panel__positions_horizontal': mode === EModeView.HORIZONTAL }"
-    >
+    <div v-if="mode == EModeView.VERTICAL" class="q-trade-panel__positions">
       <UCellPosition
-        v-for="item in store.positions.filter(({ index }) => index > 0)"
+        v-for="item in store.getVerticalSortedPositions"
+        :key="item.index"
+        :item="item"
+        @click="store.selectPosition"
+      />
+    </div>
+    <div v-else-if="mode == EModeView.HORIZONTAL" class="q-trade-panel__positions q-trade-panel__positions_horizontal">
+      <UCellPosition
+        v-for="item in store.getHorizontalSortedPositions"
         :key="item.index"
         :item="item"
         @click="store.selectPosition"

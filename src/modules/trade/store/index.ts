@@ -24,6 +24,26 @@ const useTradeStore = defineStore("trade", {
     getBalance: (state) => currencyFormat(state.balance),
     getContract: (state) => String(state.contract),
     getProfit: (state) => currencyFormat(state.profit),
+    getVerticalSortedPositions: (state) => state.positions?.filter(({ index }) => index > 0),
+    getHorizontalSortedPositions: (state) => {
+      const row_1: ITradeCell[] = [];
+      const row_2: ITradeCell[] = [];
+      const row_3: ITradeCell[] = [];
+
+      state.positions?.forEach((item) => {
+        if (item.index !== 0 && item.index % 3 === 0) {
+          row_1.push(item);
+        }
+        if (item.index !== 0 && (item.index + 1) % 3 === 0) {
+          row_2.push(item);
+        }
+        if (item.index !== 0 && (item.index + 2) % 3 === 0) {
+          row_3.push(item);
+        }
+      });
+
+      return [...row_1, ...row_2, ...row_3];
+    },
   },
 
   actions: {
